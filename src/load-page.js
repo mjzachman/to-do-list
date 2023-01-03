@@ -1,16 +1,18 @@
 const loadPage = () => {
-    const content = document.querySelector('#content');
-    const pageDiv = document.createElement('div');
-    const header = document.createElement('h1');
+    const body = document.querySelector('body');
+    const header = document.createElement('header');
+    const page = document.createElement('div');
+    const sidebar = document.createElement('div');
+    const content = document.createElement('div');
+    const footer = document.createElement('footer');
     const buttons = document.createElement('div');
     const homeBtn = document.createElement('button');
     const menuBtn = document.createElement('button');
     const contactBtn = document.createElement('button');
     
-    pageDiv.setAttribute('id', 'page');
-
-    header.textContent = 'To Do List';
-    
+    page.setAttribute('id', 'page');
+    sidebar.setAttribute('id', 'sidebar');
+    content.setAttribute('id', 'content');
 
     buttons.setAttribute('id', 'buttons');
 
@@ -26,9 +28,12 @@ const loadPage = () => {
     buttons.appendChild(homeBtn);
     buttons.appendChild(menuBtn);
     buttons.appendChild(contactBtn);
-    pageDiv.appendChild(header);
-    content.appendChild(pageDiv);
-    content.appendChild(buttons);
+    sidebar.appendChild(buttons);
+    page.appendChild(sidebar);
+    page.appendChild(content);
+    body.appendChild(header);
+    body.appendChild(page);
+    body.appendChild(footer);
 
 }
 
