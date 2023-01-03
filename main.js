@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/app-logic.js":
+/*!**************************!*\
+  !*** ./src/app-logic.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"project\": () => (/* binding */ project),\n/* harmony export */   \"toDo\": () => (/* binding */ toDo)\n/* harmony export */ });\nconst toDo = (title, desc, dueDate, prio) => {\n    return { title, desc, dueDate, prio };\n}\n\nconst project = (title) => {\n    const toDos = [];\n    const addToDo = (obj) => {\n        toDos.push(obj);\n    }\n    const deleteToDo = () => {\n        console.log('delete');\n    }\n    return { title, toDos, addToDo, deleteToDo  }\n}\n\n\n\n//# sourceURL=webpack://to-do-list/./src/app-logic.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _load_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./load-page */ \"./src/load-page.js\");\n\n\n (0,_load_page__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _load_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./load-page */ \"./src/load-page.js\");\n/* harmony import */ var _app_logic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-logic */ \"./src/app-logic.js\");\n\n\n\n (0,_load_page__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n    const newTodo = (0,_app_logic__WEBPACK_IMPORTED_MODULE_1__.toDo)('Task 1', 'This thing I should do', 'tomorrow', 0 );\n    const toDo2 = (0,_app_logic__WEBPACK_IMPORTED_MODULE_1__.toDo)('Task 2', 'buy a birthday present', 'Jan 11th', 1);\n    const lowTodo = (0,_app_logic__WEBPACK_IMPORTED_MODULE_1__.toDo)('Task 3', 'Something i dont wanna do', 'eventually', -1);\n    const myProject = (0,_app_logic__WEBPACK_IMPORTED_MODULE_1__.project)('Big Project', '1 month');\n\n    myProject.addToDo(newTodo);\n    myProject.addToDo(toDo2);\n    myProject.addToDo(lowTodo);\n \n    console.log(myProject.toDos);\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
 
 /***/ }),
 
