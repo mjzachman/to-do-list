@@ -1,7 +1,8 @@
 import loadPage from "./load-page";
 import { toDo, project } from "./app-logic"
+import { displayToDo } from "./DOM-methods"
 
- loadPage();
+   loadPage();
 
     const newTodo = toDo('Task 1', 'This thing I should do', 'tomorrow', 0 );
     const toDo2 = toDo('Task 2', 'buy a birthday present', 'Jan 11th', 1);
@@ -11,5 +12,13 @@ import { toDo, project } from "./app-logic"
     myProject.addToDo(newTodo);
     myProject.addToDo(toDo2);
     myProject.addToDo(lowTodo);
- 
-    console.log(myProject.toDos);
+
+   displayToDo(newTodo);
+   displayToDo(toDo2);
+   displayToDo(lowTodo);
+
+
+
+    
+
+    

@@ -40,8 +40,27 @@ header{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
+    padding: 50px 20px;
+    gap: 15px;
     align-items: center;
+}
+
+.todo {
+    height: 75px;
+    width: 100%;
+    background-color: lightblue;
+    border: solid navy 1px;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.desc {
+    padding: 5px;
 }
 
 #buttons {
