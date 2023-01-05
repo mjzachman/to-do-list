@@ -8,10 +8,6 @@ const loadPage = () => {
     const footer = document.createElement('footer');
     const buttons = document.createElement('div');
     const addBtn = document.createElement('button');
-    const addModal = document.createElement('div');
-    const addModalContent = document.createElement('div');
-    const words = document.createElement('p');
-    const span = document.createElement('span');
     const menuBtn = document.createElement('button');
     const contactBtn = document.createElement('button');
     
@@ -27,14 +23,7 @@ const loadPage = () => {
     addBtn.setAttribute('id', 'add');
     addBtn.textContent = 'Add New';
 
-    addModal.setAttribute('id', 'add-modal');
-
-    addModalContent.setAttribute('id', 'add-modal-content');
-    words.textContent = 'modal works!!';
-
-    span.classList.add('close');
-    span.textContent = 'x';
-
+    
 
     menuBtn.setAttribute('id', 'sort');
     menuBtn.textContent = 'Sort';
@@ -52,7 +41,25 @@ const loadPage = () => {
     body.appendChild(header);
     body.appendChild(page);
     body.appendChild(footer);
+    createModal();
+
+}
+
+
+const createModal = () => {
+    const body = document.querySelector('body');
+    const addModal = document.createElement('div');
+    const addModalContent = document.createElement('div');
+    const words = document.createElement('p');
+    const span = document.createElement('span');
     
+    addModal.setAttribute('id', 'add-modal');
+
+    addModalContent.setAttribute('id', 'add-modal-content');
+    words.textContent = 'modal works!!';
+
+    span.classList.add('close');
+    span.textContent = 'x';
     addModal.appendChild(addModalContent);
     addModalContent.appendChild(span);
     addModalContent.appendChild(words);
