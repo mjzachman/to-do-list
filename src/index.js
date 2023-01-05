@@ -18,6 +18,16 @@ import { displayToDo } from "./DOM-methods"
    displayToDo(lowTodo);
 
 
+   const addBtn = document.querySelector('#add');
+   const modal = document.querySelector('#add-modal');
+   const span = document.querySelector('.close');
+   addBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+   });
+
+   span.addEventListener('click', () => {
+      modal.style.display = 'none';
+   })
 
     
 
