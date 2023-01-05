@@ -22,6 +22,13 @@ header{
     
 }
 
+#title {
+    color: white;
+    font-size: 2rem;
+    text-decoration: underline;
+    padding: 30px 50px;
+}
+
 #page {
     flex-grow: 1;
     display: flex;
@@ -104,6 +111,25 @@ footer {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    display: flex;
-    justify-content: space-between;
+    height: 500px;
+    width: 500px;
 }
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  button:hover,
+  button:focus {
+    cursor: pointer;
+  }

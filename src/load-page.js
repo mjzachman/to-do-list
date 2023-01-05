@@ -1,6 +1,7 @@
 const loadPage = () => {
     const body = document.querySelector('body');
     const header = document.createElement('header');
+    const title = document.createElement('p');
     const page = document.createElement('div');
     const sidebar = document.createElement('div');
     const content = document.createElement('div');
@@ -17,6 +18,9 @@ const loadPage = () => {
     page.setAttribute('id', 'page');
     sidebar.setAttribute('id', 'sidebar');
     content.setAttribute('id', 'content');
+
+    title.setAttribute('id', 'title');
+    title.textContent = 'To Do List';
 
     buttons.setAttribute('id', 'buttons');
 
@@ -38,6 +42,7 @@ const loadPage = () => {
     contactBtn.setAttribute('id', 'delete');
     contactBtn.textContent = 'Delete';
 
+    header.appendChild(title);
     buttons.appendChild(addBtn);
     buttons.appendChild(menuBtn);
     buttons.appendChild(contactBtn);
@@ -49,8 +54,9 @@ const loadPage = () => {
     body.appendChild(footer);
     
     addModal.appendChild(addModalContent);
-    addModalContent.appendChild(words);
     addModalContent.appendChild(span);
+    addModalContent.appendChild(words);
+    
     body.appendChild(addModal);
 
 }
