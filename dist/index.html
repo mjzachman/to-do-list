@@ -31,36 +31,39 @@
             <p id="modal-heading">Add New To Do<span class="close">x</span></p>
             <form action="" method="post">
                 
-                <div>
-                    <label for="task_name">To Do:</label>
-                    <input type="text" id="task_name" name="task_name" placeholder="Walk the dog">
-                </div>
-                
-                <div>
-                    <label for="task_desc">Desc:</label>
-                    <input type="text" id="task_desc" name="task_desc" placeholder="Take buddy for a walk...">
-                </div>
+                <fieldset>
+                    <div>
+                        <label for="task_name">To Do:</label>
+                        <input type="text" id="task_name" name="task_name" placeholder="Walk the dog">
+                    </div>
+                    
+                    <div>
+                        <label for="task_desc">Description:</label>
+                        <input type="text" id="task_desc" name="task_desc" placeholder="Take buddy for a walk...">
+                    </div>
+                    <div>
+                        <label for="task_name">Date:</label>
+                        <input type="text" id="task_date" name="task_date" placeholder="Tomorrow">
+                    </div>
+                    <div id="radio-div">
+                        <div>
+                            <input type="radio" id="high" name="task_prio" value="high">
+                            <label for="child">High Priority</label>
+                        </div>
+                    
+                        <div>
+                            <input type="radio" id="norm" name="task_prio" value="norm">
+                            <label for="adult">Normal Priority</label>
+                        </div>
+                    
+                        <div>
+                            <input type="radio" id="low" name="task_prio" value="low">
+                            <label for="senior">Low Priority</label>
+                        </div>
+                    </div>
+                </fieldset>
 
-                <div>
-                    <label for="task_name">Date:</label>
-                    <input type="text" id="task_date" name="task_date" placeholder="Tomorrow">
-                </div>
-                <div id="radio-div">
-                    <div>
-                        <input type="radio" id="high" name="task_prio" value="high">
-                        <label for="child">High Priority</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" id="norm" name="task_prio" value="norm">
-                        <label for="adult">Normal Priority</label>
-                    </div>
-                    
-                    <div>
-                        <input type="radio" id="low" name="task_prio" value="low">
-                        <label for="senior">Low Priority</label>
-                    </div>
-                </div>
+                <button id="submit">Submit</button>
 
               </form>
         </div>
