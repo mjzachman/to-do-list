@@ -91,10 +91,9 @@ footer {
     background-color: navy;
 }
 
-#add-modal {
+#modal {
     display: none;
     position: fixed;
-    z-index: 1;
     z-index: 1;
     left: 0;
     top: 0;
@@ -105,12 +104,11 @@ footer {
     
 }
 
-#add-modal-content {
+#modal-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
     height: 500px;
     width: 500px;
 }

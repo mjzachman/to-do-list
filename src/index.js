@@ -1,8 +1,7 @@
-import loadPage from "./load-page";
 import { toDo, project } from "./app-logic"
 import { displayToDo } from "./DOM-methods"
 
-   loadPage();
+   // loadPage();
 
     const newTodo = toDo('Task 1', 'This thing I should do', 'tomorrow', 0 );
     const toDo2 = toDo('Task 2', 'buy a birthday present', 'Jan 11th', 1);
@@ -19,7 +18,7 @@ import { displayToDo } from "./DOM-methods"
 
 
    const addBtn = document.querySelector('#add');
-   const modal = document.querySelector('#add-modal');
+   const modal = document.querySelector('#modal');
    const span = document.querySelector('.close');
    
    addBtn.addEventListener('click', () => {
