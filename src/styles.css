@@ -97,8 +97,8 @@ footer {
     z-index: 1;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: auto;
     background-color: rgb(0,0,0,0.4);
     
@@ -109,8 +109,13 @@ footer {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    height: 500px;
+    height: 380px;
     width: 500px;
+    border: solid navy 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .close {
@@ -130,4 +135,28 @@ footer {
   button:hover,
   button:focus {
     cursor: pointer;
+  }
+
+  #modal-heading{
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  form>div {
+    width: 100%;
+    height: 50px;
+    border: solid black 1px;
+    padding: 10px;
+  }
+
+  #radio-div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
   }
