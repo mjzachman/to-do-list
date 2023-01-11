@@ -1,7 +1,5 @@
-import { toDo, project } from "./app-logic"
+import { toDo, project, validate } from "./app-logic"
 import { displayToDo } from "./DOM-methods"
-
-   // loadPage();
 
     const newTodo = toDo('Task 1', 'This thing I should do', 'tomorrow', 0 );
     const toDo2 = toDo('Task 2', 'buy a birthday present', 'Jan 11th', 1);
@@ -20,6 +18,7 @@ import { displayToDo } from "./DOM-methods"
    const addBtn = document.querySelector('#add');
    const modal = document.querySelector('#modal');
    const span = document.querySelector('.close');
+   const submit = document.querySelector('#submit');
    
    addBtn.addEventListener('click', () => {
       modal.style.display = 'block';
@@ -29,6 +28,10 @@ import { displayToDo } from "./DOM-methods"
       modal.style.display = 'none';
    })
 
+   submit.addEventListener('click', (e) => {
+      displayToDo(validate(e));
+      modal.style.display = 'none';
+   })
     
 
     
