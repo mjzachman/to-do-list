@@ -40,7 +40,9 @@ import { display, expand, remove } from "./DOM-methods"
    })
 
    submit.addEventListener('click', (e) => {
-      displayToDo(validate(e));
+      const userInput = validate(e);
+      display(userInput);
+      project1.add(userInput);
       modal.style.display = 'none';
    })
     
