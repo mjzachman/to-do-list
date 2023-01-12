@@ -4,13 +4,13 @@ const toDo = (title, desc, dueDate, prio) => {
 
 const project = (title) => {
     const toDos = [];
-    const addToDo = (obj) => {
+    const add = (obj) => {
         toDos.push(obj);
     }
-    const deleteToDo = () => {
+    const remove = () => {
         console.log('delete');
     }
-    return { title, toDos, addToDo, deleteToDo  }
+    return { title, toDos, add, remove  }
 }
 
 const validate = (event) => {

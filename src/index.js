@@ -1,30 +1,41 @@
 import { toDo, project, validate } from "./app-logic"
-import { displayToDo } from "./DOM-methods"
+import { display, expand, remove } from "./DOM-methods"
 
-    const newTodo = toDo('Task 1', 'This thing I should do', 'tomorrow', 0 );
-    const toDo2 = toDo('Task 2', 'buy a birthday present', 'Jan 11th', 1);
-    const lowTodo = toDo('Task 3', 'Something i dont wanna do', 'eventually', -1);
-    const myProject = project('Big Project', '1 month');
+    const chores = toDo('Task 1', 'clean my room', 'tomorrow', -1);
+    const birthday = toDo('Task 2', 'buy a birthday present', 'Jan 11th', 1);
+    const practice = toDo('Task 3', 'practice my code', 'everyday', 0);
+    const apply = toDo('Task 4', 'apply for jobs', 'end of january', 1);
 
-    myProject.addToDo(newTodo);
-    myProject.addToDo(toDo2);
-    myProject.addToDo(lowTodo);
+    const project1 = project('Personal');
+    const project2 = project('Professional');
 
-   displayToDo(newTodo);
-   displayToDo(toDo2);
-   displayToDo(lowTodo);
+    const projectList = project('Project List')
+
+    project1.add(chores);
+    project1.add(birthday);
+    project2.add(practice);
+    project2.add(apply);
+
+    projectList.add(project1);
+    projectList.add(project2);
+
+   display(chores);
+   display(birthday);
+   display(practice);
+   display(apply);
 
 
    const addBtn = document.querySelector('#add');
    const modal = document.querySelector('#modal');
-   const span = document.querySelector('.close');
+   const modalClose = document.querySelector('#modal-close');
    const submit = document.querySelector('#submit');
+   const toDoClose = document.querySelectorAll('.to-do-close')
    
    addBtn.addEventListener('click', () => {
       modal.style.display = 'block';
    });
 
-   span.addEventListener('click', () => {
+   modalClose.addEventListener('click', () => {
       modal.style.display = 'none';
    })
 
@@ -33,5 +44,11 @@ import { displayToDo } from "./DOM-methods"
       modal.style.display = 'none';
    })
     
-
+   toDoClose.forEach((button) => {
+      button.addEventListener('click', () => {
+      remove(newTodo);
+      // remove to do from memory
+      // remove to do display
+      })
+   })
     

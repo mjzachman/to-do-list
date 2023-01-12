@@ -58,16 +58,22 @@ header{
     width: 100%;
     background-color: lightblue;
     border: solid navy 1px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
 }
 
 .title {
     font-size: 1.2rem;
     font-weight: bold;
     padding: 5px;
+    width: 150px;
+    outline: solid navy 1px;
 }
 
 .desc {
     padding: 5px;
+    flex-grow: 1;
 }
 
 #buttons {
@@ -122,6 +128,7 @@ footer {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    padding: 5px;
   }
   
   .close:hover,
