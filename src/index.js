@@ -21,7 +21,7 @@ import { display, refresh, empty } from "./DOM-methods"
    const projectList = project('Project List');
    projectList.add(project1);
    projectList.add(project2);
-   
+   let selected = 0;
 
 
    const addBtn = document.querySelector('#add');
@@ -56,21 +56,25 @@ import { display, refresh, empty } from "./DOM-methods"
     
    showAll.addEventListener('click', () => {
       refresh(projectList);
+      makeButtonsWork();
+      selected = 0;
    })
 
    projects.forEach((element) => {
       element.addEventListener('click', () => {
          const currID = element.getAttribute('id');
+         if (currID === 'Personal'){selected = 1; makeButtonsWork();}
+         if(currID ==='Professional'){selected = 2; makeButtonsWork();}
          for (let i = 0; i < projectList.toDos.length; i++){
             if (currID === projectList.toDos[i].title){
                empty();
                display(projectList.toDos[i]);
+               makeButtonsWork();
             }
          }
       })
       
    })
-
 
    const makeButtonsWork = () => {
       const toDoClose = document.querySelectorAll('.to-do-close');
@@ -82,7 +86,14 @@ import { display, refresh, empty } from "./DOM-methods"
             for(let j = 0; j < projectList.toDos[i].toDos.length; j++){
                if (closeID === projectList.toDos[i].toDos[j].title){
                   projectList.toDos[i].toDos.splice(j,1);
-                  refresh(projectList);
+                  if (selected === 0) {
+                     empty();
+                     refresh(projectList);
+                  } else {
+                     empty();
+                     display(projectList.toDos[i]);
+                  }
+                  
                   makeButtonsWork();
                }
             }

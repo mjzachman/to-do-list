@@ -43,7 +43,6 @@ const display = (obj) => {
       const content = document.getElementById('content');
 
       while (content.firstChild) {
-         console.log('removing another!');
          content.removeChild(content.lastChild);
       }
     }
