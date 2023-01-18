@@ -31,22 +31,25 @@ const display = (obj) => {
     }
 
     const refresh = (obj) => {
-      const content = document.getElementById('content');
-
-      while (content.firstChild) {
-         console.log('removing another!');
-         content.removeChild(content.lastChild);
-      }
+      empty();
       
       obj.toDos.forEach(element => {
          display(element);
       })
     }
     
+    const empty = () => {
+      const content = document.getElementById('content');
+
+      while (content.firstChild) {
+         console.log('removing another!');
+         content.removeChild(content.lastChild);
+      }
+    }
 
  const expand = (obj) => {
     // given a selected to-do, expand the display to show all hidden information
  }
 
 
- export { display, refresh };
+ export { display, refresh, empty };

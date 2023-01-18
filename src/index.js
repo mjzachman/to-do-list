@@ -1,5 +1,5 @@
 import { toDo, project, validate } from "./app-logic"
-import { display, refresh } from "./DOM-methods"
+import { display, refresh, empty } from "./DOM-methods"
 
     const chores = toDo('Task 1', 'clean my room', 'tomorrow', -1);
     const birthday = toDo('Task 2', 'buy a birthday present', 'Jan 11th', 1);
@@ -28,7 +28,9 @@ import { display, refresh } from "./DOM-methods"
    const modal = document.querySelector('#modal');
    const modalClose = document.querySelector('#modal-close');
    const submit = document.querySelector('#submit');
-   const toDoClose = document.querySelectorAll('.to-do-close')
+   const toDoClose = document.querySelectorAll('.to-do-close');
+   const all = document.getElementById('Project List');
+   const projects = document.querySelectorAll('.project');
    
    addBtn.addEventListener('click', () => {
       modal.style.display = 'block';
@@ -47,9 +49,26 @@ import { display, refresh } from "./DOM-methods"
     
    toDoClose.forEach((button) => {
       button.addEventListener('click', () => {
-      remove(newTodo);
+      console.log('remove the to do!');
       // remove to do from memory
       // remove to do display
       })
    })
     
+   all.addEventListener('click', () => {
+      refresh(projectList);
+   })
+
+   projects.forEach((element) => {
+      element.addEventListener('click', () => {
+         const currID = element.getAttribute('id');
+         for (let i = 0; i < projectList.toDos.length; i++){
+            console.log(projectList.toDos)
+            if (currID === projectList.toDos[i].title){
+               empty();
+               display(projectList.toDos[i]);
+            }
+         }
+      })
+      
+   })
