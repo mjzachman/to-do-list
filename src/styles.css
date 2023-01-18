@@ -40,6 +40,11 @@ header{
     background-color: lightgray;
     color: navy;
     font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
     
 }
 
@@ -110,6 +115,7 @@ li:focus {
     align-items: center;
     gap: 50px;
     padding: 25px;
+    height: 250px;
 }
 
 button {
@@ -141,7 +147,7 @@ footer {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    height: 400px;
+    height: 500px;
     width: 500px;
     border: solid navy 5px;
     border-radius: 10px;
@@ -198,7 +204,7 @@ footer {
     padding: 10px;
   }
 
-  #radio-div{
+  .radio-div{
     display: flex;
     justify-content: space-evenly;
     align-items: center;

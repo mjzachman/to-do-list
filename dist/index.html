@@ -19,13 +19,14 @@
                 <button id="add">Add New</button>
                 <button id="sort">Sort</button>
                 <button id="delete">Delete</button>
-                <h2>Projects</h2>
+                
+            </div>
+            <h2>Projects</h2>
                 <ul id="list">
                     <li id="Project List">All To Dos</li>
                     <li id="Personal" class="project">Personal</li>
                     <li id="Professional" class="project">Professional</li>
                 </ul>
-            </div>
         </div>
         <div id="content"></div>
     </div>
@@ -51,21 +52,35 @@
                         <label for="task_name">Date:</label>
                         <input type="text" id="task_date" name="task_date" placeholder="Tomorrow">
                     </div>
-                    <div id="radio-div">
+                    <div class="radio-div">
                         <div>
                             <input type="radio" id="high" name="task_prio" value="high">
-                            <label for="child">High Priority</label>
+                            <label for="high">High Priority</label>
                         </div>
                     
                         <div>
                             <input type="radio" id="norm" name="task_prio" value="norm">
-                            <label for="adult">Normal Priority</label>
+                            <label for="norm">Normal Priority</label>
                         </div>
                     
                         <div>
                             <input type="radio" id="low" name="task_prio" value="low">
-                            <label for="senior">Low Priority</label>
+                            <label for="low">Low Priority</label>
                         </div>
+                    </div>
+
+                    <div class="radio-div">
+                        <div>
+                            <input type="radio" id="Personal" name="task_proj" value="Personal">
+                            <label for="Personal">Personal</label>
+                        </div>
+                    
+                        <div>
+                            <input type="radio" id="Professional" name="task_proj" value="Professional">
+                            <label for="Professional">Professional</label>
+                        </div>
+                    
+    
                     </div>
                 </fieldset>
 

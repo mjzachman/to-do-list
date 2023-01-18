@@ -42,7 +42,11 @@ import { display, refresh, empty } from "./DOM-methods"
 
    submit.addEventListener('click', (e) => {
       const userInput = validate(e);
-      project1.add(userInput);
+      for (let i = 0; i < projectList.toDos.length; i++){
+         if (userInput.proj === projectList.toDos[i].title){
+            projectList.toDos[i].add(userInput);
+         }
+      }
       refresh(projectList);
       modal.style.display = 'none';
    })
@@ -63,7 +67,6 @@ import { display, refresh, empty } from "./DOM-methods"
       element.addEventListener('click', () => {
          const currID = element.getAttribute('id');
          for (let i = 0; i < projectList.toDos.length; i++){
-            console.log(projectList.toDos)
             if (currID === projectList.toDos[i].title){
                empty();
                display(projectList.toDos[i]);

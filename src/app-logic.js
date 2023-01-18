@@ -1,5 +1,5 @@
-const toDo = (title, desc, dueDate, prio) => {
-    return { title, desc, dueDate, prio };
+const toDo = (title, desc, dueDate, prio, proj) => {
+    return { title, desc, dueDate, prio, proj };
 }
 
 const project = (title) => {
@@ -21,7 +21,7 @@ const validate = (event) => {
     const taskDesc = document.querySelector('#task_desc').value;
     const taskDate = document.querySelector('#task_date').value;
     let taskPrio = document.querySelector('input[name="task_prio"]:checked').value;
-
+    const taskProj = document.querySelector('input[name="task_proj"]:checked').value;
     switch (taskPrio) {
         case 'high':
             taskPrio = 1;
@@ -36,7 +36,7 @@ const validate = (event) => {
             taskPrio = 0;
     }
 
-    const userToDo = toDo(taskName, taskDesc, taskDate, taskPrio)
+    const userToDo = toDo(taskName, taskDesc, taskDate, taskPrio, taskProj)
     clearForm(form);
     return userToDo;
 }
