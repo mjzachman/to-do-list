@@ -28,7 +28,7 @@ import { display, refresh, empty } from "./DOM-methods"
    const modal = document.querySelector('#modal');
    const modalClose = document.querySelector('#modal-close');
    const submit = document.querySelector('#submit');
-   const toDoClose = document.querySelectorAll('.to-do-close');
+   
    const showAll = document.getElementById('Project List');
    const projects = document.querySelectorAll('.project');
    
@@ -48,23 +48,11 @@ import { display, refresh, empty } from "./DOM-methods"
          }
       }
       refresh(projectList);
+      makeButtonsWork();
       modal.style.display = 'none';
    })
     
-   toDoClose.forEach((button) => {
-      button.addEventListener('click', () => {
-      const closeID = button.getAttribute('id');
-      console.log('remove the to do!');
-      for(let i = 0; i < projectList.toDos.length; i++){
-         for(let j = 0; j < projectList.toDos[i].toDos.length; j++){
-            if (closeID === projectList.toDos[i].toDos[j].title){
-               projectList.toDos[i].toDos.splice(j,1);
-               refresh(projectList);
-            }
-         }
-      }
-      })
-   })
+  
     
    showAll.addEventListener('click', () => {
       refresh(projectList);
@@ -82,3 +70,25 @@ import { display, refresh, empty } from "./DOM-methods"
       })
       
    })
+
+
+   const makeButtonsWork = () => {
+      const toDoClose = document.querySelectorAll('.to-do-close');
+      toDoClose.forEach((button) => {
+         button.addEventListener('click', () => {
+         const closeID = button.getAttribute('id');
+         console.log('remove the to do!');
+         for(let i = 0; i < projectList.toDos.length; i++){
+            for(let j = 0; j < projectList.toDos[i].toDos.length; j++){
+               if (closeID === projectList.toDos[i].toDos[j].title){
+                  projectList.toDos[i].toDos.splice(j,1);
+                  refresh(projectList);
+                  makeButtonsWork();
+               }
+            }
+         }
+         })
+      })
+   }
+
+   makeButtonsWork();
