@@ -57,11 +57,13 @@ header{
     height: 75px;
     width: 100%;
     background-color: lightblue;
-    border: solid navy 1px;
+    border: solid navy 3px;
     display: flex;
     justify-content: flex-start;
     align-items: stretch;
 }
+
+
 
 .title {
     font-size: 1.2rem;
@@ -69,6 +71,14 @@ header{
     padding: 5px;
     width: 150px;
     outline: solid navy 1px;
+}
+
+.high-prio {
+    border: solid red 3px;
+}
+
+.low-prio {
+    border: solid green 3px;
 }
 
 .desc {

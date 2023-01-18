@@ -1,5 +1,5 @@
 import { toDo, project, validate } from "./app-logic"
-import { display, expand, remove } from "./DOM-methods"
+import { display, refresh } from "./DOM-methods"
 
     const chores = toDo('Task 1', 'clean my room', 'tomorrow', -1);
     const birthday = toDo('Task 2', 'buy a birthday present', 'Jan 11th', 1);
@@ -9,20 +9,19 @@ import { display, expand, remove } from "./DOM-methods"
     const project1 = project('Personal');
     const project2 = project('Professional');
 
-    const projectList = project('Project List')
-
     project1.add(chores);
     project1.add(birthday);
     project2.add(practice);
     project2.add(apply);
+    
 
-    projectList.add(project1);
-    projectList.add(project2);
+   display(project1);
+   display(project2);
 
-   display(chores);
-   display(birthday);
-   display(practice);
-   display(apply);
+   const projectList = project('Project List');
+   projectList.add(project1);
+   projectList.add(project2);
+   
 
 
    const addBtn = document.querySelector('#add');
@@ -41,8 +40,8 @@ import { display, expand, remove } from "./DOM-methods"
 
    submit.addEventListener('click', (e) => {
       const userInput = validate(e);
-      display(userInput);
       project1.add(userInput);
+      refresh(projectList);
       modal.style.display = 'none';
    })
     
