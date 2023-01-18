@@ -29,7 +29,7 @@ import { display, refresh, empty } from "./DOM-methods"
    const modalClose = document.querySelector('#modal-close');
    const submit = document.querySelector('#submit');
    const toDoClose = document.querySelectorAll('.to-do-close');
-   const all = document.getElementById('Project List');
+   const showAll = document.getElementById('Project List');
    const projects = document.querySelectorAll('.project');
    
    addBtn.addEventListener('click', () => {
@@ -53,13 +53,20 @@ import { display, refresh, empty } from "./DOM-methods"
     
    toDoClose.forEach((button) => {
       button.addEventListener('click', () => {
+      const closeID = button.getAttribute('id');
       console.log('remove the to do!');
-      // remove to do from memory
-      // remove to do display
+      for(let i = 0; i < projectList.toDos.length; i++){
+         for(let j = 0; j < projectList.toDos[i].toDos.length; j++){
+            if (closeID === projectList.toDos[i].toDos[j].title){
+               projectList.toDos[i].toDos.splice(j,1);
+               refresh(projectList);
+            }
+         }
+      }
       })
    })
     
-   all.addEventListener('click', () => {
+   showAll.addEventListener('click', () => {
       refresh(projectList);
    })
 

@@ -12,6 +12,7 @@ const display = (obj) => {
       toDoDesc.classList.add('desc');
       del.classList.add('close');
       del.classList.add('to-do-close');
+      del.setAttribute('id', element.title);
   
       toDoTitle.textContent = element.title;
       toDoDesc.textContent = element.desc;
