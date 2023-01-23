@@ -87,7 +87,6 @@ import { display, refresh, empty } from "./DOM-methods"
                if (closeID === projectList.toDos[i].toDos[j].title){
                   projectList.toDos[i].toDos.splice(j,1);
                   if (selected === 0) {
-                     empty();
                      refresh(projectList);
                   } else {
                      empty();
